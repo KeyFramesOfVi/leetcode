@@ -5,23 +5,13 @@ int lengthOfLongestSubstring(std::string);
 
 int main(){
 	std::string s = "pwwkew";
-	std::cout << lengthOfLongestSubstring(s);
+	std::cout << lengthOfLongestSubstring(s) << std::endl;
 	return 0;
 }
 
-/*
- * Create a dictionary of size ASCII (this can probably be optimized)
- * as my memo. Initialize everything to -1, including your start int. 
- * Whenever you don't find the letter you are currently on in your dict, 
- * set that value to the position you are currently at. When you do find it,
- * that means you have ran into a duplicate letter, so that is your new start.
- * The max_length will always either be itself or the current position minus the
- * current start position. Because start is -1, this even calculates correctly for 
- * when you don't have a start position yet, making the code even more compact! :D
- */
 int lengthOfLongestSubstring(std::string s) {
 	/*
- 	 * Create a dictionary of size ASCII (this can probably be optimized)
+ 	 * Create a dictionary of size ASCII (leetcode tests to ensure you cover ASCII's range)
 	 * as my memo. Initialize everything to -1, including your start int. 
  	 */
 	std::vector<int> dict(256, -1);
